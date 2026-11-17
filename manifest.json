@@ -1,0 +1,10 @@
+{
+	"id": "kiri-focus-timer",
+	"name": "Kiri Focus Timer",
+	"version": "0.3.3",
+	"minAppVersion": "1.7.2",
+	"description": "Run focus blocks on your tasks with breaks, a soft chime, local brown, pink or white noise and a log in your daily note.",
+	"author": "Kiri",
+	"authorUrl": "https://project-kiri.com",
+	"isDesktopOnly": false
+}

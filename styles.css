@@ -1,0 +1,420 @@
+/* Kiri Focus Timer. Uses Obsidian theme variables only, so themes and snippets can restyle it. */
+
+.kiri-view {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-4);
+	padding: var(--size-4-3);
+}
+
+.kiri-timer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-4-3) 0;
+}
+
+.kiri-phase {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.kiri-countdown {
+	font-size: 3.2em;
+	font-weight: var(--font-semibold);
+	font-variant-numeric: tabular-nums;
+	line-height: 1.1;
+	color: var(--text-normal);
+}
+
+.kiri-countdown.is-paused {
+	color: var(--text-muted);
+}
+
+.kiri-hint:empty {
+	display: none;
+}
+
+.kiri-hint {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	text-align: center;
+}
+
+.kiri-controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--size-4-2);
+}
+
+.kiri-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-2);
+}
+
+.kiri-label {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-semibold);
+}
+
+.kiri-row {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+}
+
+.kiri-row .slider {
+	flex: 1;
+}
+
+.kiri-lengths {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+}
+
+.kiri-lengths .kiri-length,
+.kiri-lengths .kiri-custom {
+	min-width: 3.5em;
+	width: 4.5em;
+}
+
+.kiri-lengths .is-active {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+.kiri-search {
+	flex: 1;
+	min-width: 0;
+}
+
+.kiri-scope {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	white-space: nowrap;
+}
+
+.kiri-selected {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--size-4-2);
+	padding: var(--size-4-2);
+	border-radius: var(--radius-s);
+	background-color: var(--background-secondary);
+}
+
+.kiri-selected-text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	overflow-wrap: anywhere;
+}
+
+.kiri-task-list {
+	display: flex;
+	flex-direction: column;
+	max-height: 40vh;
+	overflow-y: auto;
+	border: var(--border-width) solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+}
+
+.kiri-task {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	padding-right: var(--size-4-1);
+}
+
+.kiri-task-main {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	padding: var(--size-4-1) var(--size-4-2);
+	cursor: var(--cursor);
+	overflow-wrap: anywhere;
+}
+
+.kiri-task:hover,
+.kiri-task-main:focus-visible {
+	background-color: var(--background-modifier-hover);
+}
+
+.kiri-task.is-selected {
+	background-color: var(--background-modifier-active-hover);
+	color: var(--text-normal);
+}
+
+.kiri-note-name {
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
+}
+
+.kiri-muted {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+.kiri-footer {
+	margin-top: auto;
+	padding-top: var(--size-4-3);
+	border-top: var(--border-width) solid var(--background-modifier-border);
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
+}
+
+.kiri-status.kiri-hidden {
+	display: none;
+}
+
+.kiri-status {
+	font-variant-numeric: tabular-nums;
+}
+
+.kiri-modal-task {
+	color: var(--text-muted);
+	overflow-wrap: anywhere;
+}
+
+/* Focus stats */
+
+.kiri-stats {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-3);
+}
+
+.kiri-stat-tiles {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+	gap: var(--size-4-2);
+}
+
+.kiri-stat-tile {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	padding: var(--size-4-2) var(--size-4-3);
+	border-radius: var(--radius-s);
+	background-color: var(--background-secondary);
+}
+
+.kiri-stat-value {
+	font-size: var(--font-ui-large);
+	font-weight: var(--font-semibold);
+	font-variant-numeric: tabular-nums;
+}
+
+.kiri-stats-head {
+	justify-content: space-between;
+}
+
+.kiri-stats-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-2);
+	max-height: 50vh;
+	overflow-y: auto;
+}
+
+.kiri-stats-row-top {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--size-4-2);
+	overflow-wrap: anywhere;
+}
+
+.kiri-stats-minutes {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.kiri-stats-bar {
+	width: 100%;
+	height: 0.4em;
+}
+
+/* Kiri account */
+
+.kiri-sound-status:empty {
+	display: none;
+}
+
+.kiri-sound-status .kiri-muted {
+	padding: 0;
+}
+
+.kiri-user-code {
+	margin-top: var(--size-4-2);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-large);
+	font-weight: var(--font-semibold);
+	letter-spacing: 0.15em;
+	color: var(--text-normal);
+	user-select: all;
+}
+
+.kiri-account-note {
+	padding: var(--size-4-2) 0;
+}
+
+.kiri-kiris:empty {
+	display: none;
+}
+
+.kiri-kiris {
+	margin-bottom: var(--size-4-1);
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Today */
+
+/* A long list scrolls on its own, so the timer and its buttons below stay in view. */
+.kiri-today-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	max-height: min(40vh, 24em);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+.kiri-today-list.kiri-hidden,
+.kiri-today-hint:empty {
+	display: none;
+}
+
+.kiri-today-hint {
+	padding: 0;
+}
+
+.kiri-today .kiri-label:focus {
+	outline: none;
+}
+
+.kiri-today .kiri-label:focus-visible {
+	box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+	border-radius: var(--radius-s);
+}
+
+.kiri-today-item.is-stale .kiri-today-text > :first-child {
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.kiri-today-item.is-stale .kiri-note-name {
+	color: var(--text-error);
+}
+
+/* Read by screen readers, not shown. */
+.kiri-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.kiri-today-item {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--size-4-2);
+	padding: var(--size-4-1) var(--size-4-2);
+	border: var(--border-width) solid transparent;
+	border-radius: var(--radius-s);
+	cursor: grab;
+}
+
+.kiri-today-item.is-current {
+	background-color: var(--background-secondary);
+	border-color: var(--background-modifier-border);
+}
+
+.kiri-today-item.is-dragging {
+	opacity: 0.5;
+}
+
+.kiri-today-item.is-drop-target {
+	border-color: var(--interactive-accent);
+}
+
+.kiri-today-item input[type='checkbox'] {
+	flex-shrink: 0;
+	margin-top: var(--size-2-2);
+}
+
+.kiri-today-text {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	overflow-wrap: anywhere;
+}
+
+.kiri-today-item:not(.is-current) .kiri-today-text {
+	cursor: pointer;
+}
+
+.kiri-today-item:not(.is-current) .kiri-today-text:hover > :first-child {
+	color: var(--text-accent);
+}
+
+.kiri-today-text:focus {
+	outline: none;
+}
+
+.kiri-today-text:focus-visible {
+	box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+	border-radius: var(--radius-s);
+}
+
+.kiri-today-actions {
+	display: flex;
+	flex-shrink: 0;
+	gap: var(--size-2-1);
+}
+
+.kiri-icon-button {
+	flex-shrink: 0;
+	padding: var(--size-2-2);
+}
+
+.kiri-icon-button:disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+/* A note under a number setting after its value was corrected. */
+.kiri-field-message:not(:empty) {
+	margin-top: 4px;
+	color: var(--text-warning);
+}
+
+.kiri-lengths .kiri-break-auto {
+	width: auto;
+	white-space: nowrap;
+}
