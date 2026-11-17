@@ -63,11 +63,17 @@ Kiri never writes frontmatter, never renames, moves or deletes a note, and never
 
 ## Screenshots
 
-_Screenshots will be added before the first release._
+The Kiri panel next to a note: Today list, timer, block and break length.
 
-<!-- ![Kiri panel](./images/panel.png) -->
-<!-- TODO: ![Today list with the current task](./images/today.png) -->
-<!-- ![Focus log in a daily note](./images/log.png) -->
+![Kiri panel with the Today list and a running focus block](./images/panel.png)
+
+Switch task: type part of a task and press Enter to make it the current one.
+
+![The Switch task picker](./images/switch-task.png)
+
+Each finished block adds one line under "Focus log" in your daily note.
+
+![Focus log in a daily note](./images/log.png)
 
 ## Install
 
