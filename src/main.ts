@@ -3,7 +3,6 @@ import {
 	debounce,
 	type Editor,
 	type MarkdownFileInfo,
-	moment,
 	normalizePath,
 	Notice,
 	Platform,
@@ -23,6 +22,7 @@ import { type CycleState, EMPTY_CYCLE, type PendingBreak, planBreak, regularBrea
 import { BLOCK_KEY, parseSavedBlock, type SavedBlock } from './logic/savedBlock';
 import { formatCountdown } from './logic/duration';
 import { formatLogLine } from './logic/logLine';
+import { moment } from './time';
 import { addSpent, copyOf, hasUnreadableCounter, hasUnreadableSpent, incrementCounter, isOpenTask, logTaskText, parseTaskLine, plainTaskText, splitLines } from './logic/taskLine';
 import {
 	addManyToToday,

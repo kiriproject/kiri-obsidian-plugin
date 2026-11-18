@@ -1,4 +1,5 @@
-import { type App, moment, normalizePath, TFile } from 'obsidian';
+import { type App, normalizePath, TFile } from 'obsidian';
+import { type DateValue, moment } from '../time';
 import { insertUnderHeading, parseHeadingSetting } from '../logic/heading';
 import { applyDailyTemplate } from '../logic/template';
 
@@ -60,7 +61,7 @@ export interface LogNoteOptions {
 }
 
 /** The path of today's daily note, from the Daily notes settings. */
-export function dailyNotePath(config: DailyNotesConfig, now = moment()): string {
+export function dailyNotePath(config: DailyNotesConfig, now: DateValue = moment()): string {
 	const name = now.format(config.format);
 	return normalizePath(config.folder ? `${config.folder}/${name}.md` : `${name}.md`);
 }

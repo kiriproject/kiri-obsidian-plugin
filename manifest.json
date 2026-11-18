@@ -2,7 +2,7 @@
 	"id": "kiri-focus-timer",
 	"name": "Kiri Focus Timer",
 	"version": "0.3.4",
-	"minAppVersion": "1.11.4",
+	"minAppVersion": "1.13.0",
 	"description": "Run a Pomodoro focus timer on your tasks, with breaks, a soft chime, brown, pink or white noise and a log in your daily note.",
 	"author": "Kiri",
 	"authorUrl": "https://project-kiri.com",

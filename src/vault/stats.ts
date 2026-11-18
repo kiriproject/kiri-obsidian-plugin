@@ -1,4 +1,5 @@
-import { type App, moment, normalizePath } from 'obsidian';
+import { type App, normalizePath } from 'obsidian';
+import { moment } from '../time';
 import { entriesFromNote, type FocusEntry } from '../logic/stats';
 import { FALLBACK_LOG_NOTE, readDailyNotesConfig } from './dailyNote';
 
