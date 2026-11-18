@@ -1,6 +1,6 @@
 {
 	"name": "kiri-focus-timer",
-	"version": "0.3.3",
+	"version": "0.3.4",
 	"description": "Run a Pomodoro focus timer on your tasks, with breaks, a soft chime, brown, pink or white noise and a log in your daily note.",
 	"main": "main.js",
 	"type": "module",
