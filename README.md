@@ -79,9 +79,9 @@ Each finished block adds one line under "Focus log" in your daily note.
 
 Needs Obsidian 1.13 or later.
 
-**From Community plugins (once approved).** In Obsidian, open Settings → Community plugins → Browse, search for "Kiri Focus Timer", then install and enable it.
+**From Community plugins.** In Obsidian, open Settings → Community plugins → Browse, search for "Kiri Focus Timer", then install and enable it. Or open the [listing](https://community.obsidian.md/plugins/kiri-focus-timer) directly.
 
-**Manual install (until then).**
+**Manual install.**
 
 1. Download `main.js`, `manifest.json` and `styles.css` from the latest release on the Releases page of this repository.
 2. In your vault, create the folder `.obsidian/plugins/kiri-focus-timer/`.
